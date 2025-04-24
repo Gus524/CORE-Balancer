@@ -1,5 +1,13 @@
 import azure.functions as func
 import logging
+import load_model
+
+CONNECTION_STRING_ENV_VAR = "MODEL_STORAGE_CONNECTION_STRING"
+CONTAINER_NAME = "modelos-rnn"
+MODEL_BLOB_NAME = "lstm_model_23C.zip"
+model = None
+
+load_model()
 
 app = func.FunctionApp(http_auth_level=func.AuthLevel.FUNCTION)
 
